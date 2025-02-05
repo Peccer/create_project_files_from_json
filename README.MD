@@ -7,7 +7,7 @@ I like to ask ChatGPT to provide the code of complete projects. Creating folders
 
 ## 1. How It Works
 
-1. **ChatGPT Prompt** – You provide ChatGPT the prompt (see file "prompt.md" or just copy it from section 2 in this readme), instructing it to output project code in a single JSON object where each folder is a key (with nested JSON for subfolders) and each file is a key-value pair (filename → file content).
+1. **ChatGPT Prompt** – You provide ChatGPT the prompt (see file "prompt.txt" or just copy it from section 2 in this readme), instructing it to output project code in a single JSON object where each folder is a key (with nested JSON for subfolders) and each file is a key-value pair (filename → file content).
 
 2. **Generate JSON** – ChatGPT returns a large JSON structure with all your source code embedded as strings.
 

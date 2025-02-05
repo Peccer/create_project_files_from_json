@@ -1,0 +1,33 @@
+I’d like you to provide the entire project code in a single valid JSON object. 
+
+Each top-level key represents either:
+- A folder (which is itself a JSON object), or
+- A file (with its content as a string).
+
+Important details:
+
+1. Do NOT use any duplicate folder names at the same level. For example, if you have a `backend` folder, it appears only once. 
+2. Each folder (e.g., `backend`, `frontend`) may contain multiple files like "Dockerfile", "main.py", etc. The file's entire code must be in the string value of that key.
+3. Top-level files (like "cloudbuild.yaml", "README.md", "setup.py") should appear directly in the JSON, not inside a subfolder.
+4. Return only valid JSON — no Markdown code fences or extra explanations.
+5. Escape any special characters so the JSON can be parsed by `json.loads(...)` without errors.
+6. No duplicate keys. If a folder is named "frontend", it should only appear once.
+
+An example structure (shortened) might be:
+{
+  "backend": {
+    "Dockerfile": "...",
+    "main.py": "...",
+    "requirements.txt": "..."
+  },
+  "frontend": {
+    "Dockerfile": "...",
+    "app.py": "...",
+    "requirements.txt": "..."
+  },
+  "cloudbuild.yaml": "...",
+  "README.md": "...",
+  "setup.py": "..."
+}
+
+Please output only the JSON.
