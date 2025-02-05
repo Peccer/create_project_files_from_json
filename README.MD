@@ -1,4 +1,4 @@
-# README: Automated Project Generation with JSON + `create_project.py`
+# Automated Project Generation with JSON + `create_project.py`
 
 This repository demonstrates how to **automate the creation of an entire project** (folders and files) by having an LLM output a **JSON representation** of your code (TESTED on OpenAi o1), then using a simple Python script to convert that JSON into real directories and files on your machine.
 
