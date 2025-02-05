@@ -1,15 +1,15 @@
 # Automated Project Generation with JSON + `create_project.py`
 
-This repository demonstrates how to **automate the creation of an entire project** (folders and files) by having an LLM output a **JSON representation** of your code (TESTED on OpenAi o1), then using a simple Python script to convert that JSON into real directories and files on your machine.
+This repository demonstrates how to **automate the creation of an entire project** (folders and files) by having ChatGPT output a **JSON representation** of your code (TESTED on OpenAi's o1), then using a simple Python script to convert that JSON into real directories and files on your machine.
 
 ## Why?
 I like to ask ChatGPT to provide the code of complete projects. Creating folders, files and copy- pasting the code is boring so I wanted to automate part of it!
 
 ## 1. How It Works
 
-1. **LLM Prompt** – You provide ChatGPT the prompt (see file "prompt.md" or just copy it from section 2 in this readme), instructing it to output project code in a single JSON object where each folder is a key (with nested JSON for subfolders) and each file is a key-value pair (filename → file content).
+1. **ChatGPT Prompt** – You provide ChatGPT the prompt (see file "prompt.md" or just copy it from section 2 in this readme), instructing it to output project code in a single JSON object where each folder is a key (with nested JSON for subfolders) and each file is a key-value pair (filename → file content).
 
-2. **Generate JSON** – The LLM returns a large JSON structure with all your source code embedded as strings.
+2. **Generate JSON** – ChatGPT returns a large JSON structure with all your source code embedded as strings.
 
 3. **Create Project Script** – You copy the JSON into a local file, which has to be named `project.json` and then run the Python script `create_project.py` to “unpack” that JSON into actual folders and files. You can run the python script by opening your CLI and run `python create_project.py`. More detailed instructions below.
 
@@ -19,7 +19,7 @@ I like to ask ChatGPT to provide the code of complete projects. Creating folders
 
 ## 2. The Prompt
 
-Below is a **general-purpose prompt** you can use with ChatGPT (or any LLM) to produce a valid JSON structure containing your entire project. **Copy-paste** this prompt whenever you want to generate a new project automatically:
+Below is a **general-purpose prompt** you can use with ChatGPT (or any ChatGPT) to produce a valid JSON structure containing your entire project. **Copy-paste** this prompt whenever you want to generate a new project automatically:
 
 ---
 
@@ -63,8 +63,8 @@ Please output only the JSON.
 
 ## 3. Using `create_project.py`
 
-1. **Save LLM Output as `project.json`**  
-   Once you get the JSON from the LLM, copy all of it (just the JSON structure) into a file named `project.json`.
+1. **Save ChatGPT Output as `project.json`**  
+   Once you get the JSON from ChatGPT, copy all of it (just the JSON structure) into a file named `project.json`.
 
 2. **Have `create_project.py` in the same folder**  
    Make sure your working directory contains both `project.json` **and** `create_project.py`.
@@ -122,7 +122,7 @@ Feel free to customize the script to change the default project folder name or h
 
 ## 4. Summary
 
-1. Prompt the LLM to produce a **structured JSON** of your entire codebase.  
+1. Prompt ChatGPT to produce a **structured JSON** of your entire codebase.  
 2. Save that JSON to `project.json`.  
 3. Use `create_project.py` to automatically convert that JSON into real folders and files.  
 4. **No more** manual copy-pasting or folder creation—instant code scaffolding!
